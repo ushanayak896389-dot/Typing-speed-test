@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>मिट्टी का मटका - ऑनलाइन दुकान</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fffaf2;
+            color: #333;
+        }
+
+        header {
+            background: #8b4513;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 8px;
+        }
+
+        nav {
+            background: #5c2e0b;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 45px 15px;
+            background: #f5dfc4;
+        }
+
+        .hero h2 {
+            font-size: 30px;
+            color: #8b4513;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #8b4513;
+            color: white;
+            padding: 12px 22px;
+            text-decoration: none;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .products {
+            padding: 30px 15px;
+            text-align: center;
+        }
+
+        .products h2 {
+            color: #8b4513;
+            margin-bottom: 25px;
+        }
+
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .product {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 3px 10px #00000015;
+        }
+
+        .product img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product h3 {
+            margin: 12px 0;
+        }
+
+        .price {
+            color: #8b4513;
+            font-size: 21px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .product button {
+            width: 100%;
+        }
+
+        .about {
+            background: #f5dfc4;
+            padding: 30px 20px;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .contact {
+            padding: 30px 15px;
+            text-align: center;
+            line-height: 2;
+        }
+
+        footer {
+            background: #5c2e0b;
+            color: white;
+            text-align: center;
+            padding: 18px;
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                margin: 0 6px;
+                font-size: 14px;
+            }
+
+            .hero h2 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🏺 मिट्टी का मटका</h1>
+        <p>शुद्ध मिट्टी के बर्तन, आपके घर के लिए</p>
+    </header>
+
+    <nav>
+        <a href="#home">होम</a>
+        <a href="#products">प्रोडक्ट</a>
+        <a href="#about">हमारे बारे में</a>
+        <a href="#contact">संपर्क</a>
+    </nav>
+
+    <section class="hero" id="home">
+        <h2>प्राकृतिक ठंडे पानी का आनंद लें!</h2>
+        <p>पारंपरिक मिट्टी के मटके और सुंदर मिट्टी के बर्तन।</p>
+        <a href="#products" class="btn">अभी खरीदें</a>
+    </section>
+
+    <section class="products" id="products">
+        <h2>हमारे मिट्टी के मटके</h2>
+
+        <div class="product-list">
+
+            <div class="product">
+                <img
+                    src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=600&q=80"
+                    alt="मिट्टी का मटका">
+                <h3>साधारण मिट्टी का मटका</h3>
+                <p class="price">₹299</p>
+                <button class="btn"
+                    onclick="orderProduct('साधारण मिट्टी का मटका', 299)">
+                    WhatsApp से ऑर्डर करें
+                </button>
+            </div>
+
+            <div class="product">
+                <img
+                    src="https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&fit=crop&w=600&q=80"
+                    alt="डिजाइन वाला मिट्टी का बर्तन">
+                <h3>डिजाइन वाला मटका</h3>
+                <p class="price">₹499</p>
+                <button class="btn"
+                    onclick="orderProduct('डिजाइन वाला मटका', 499)">
+                    WhatsApp से ऑर्डर करें
+                </button>
+            </div>
+
+            <div class="product">
+                <img
+                    src="https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?auto=format&fit=crop&w=600&q=80"
+                    alt="मिट्टी का सजावटी बर्तन">
+                <h3>सजावटी मिट्टी का बर्तन</h3>
+                <p class="price">₹399</p>
+                <button class="btn"
+                    onclick="orderProduct('सजावटी मिट्टी का बर्तन', 399)">
+                    WhatsApp से ऑर्डर करें
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2>हमारे बारे में</h2>
+        <p>
+            हमारी दुकान पर पारंपरिक मिट्टी के मटके और बर्तन मिलते हैं।
+            हमारा उद्देश्य मिट्टी के बर्तनों की सुंदर परंपरा को
+            आपके घर तक पहुँचाना है।
+        </p>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>संपर्क करें</h2>
+        <p>📞 फोन: अपना मोबाइल नंबर यहाँ लिखें</p>
+        <p>📍 पता: अपना दुकान का पता यहाँ लिखें</p>
+    </section>
+
+    <footer>
+        <p>© 2026 मिट्टी का मटका | सभी अधिकार सुरक्षित</p>
+    </footer>
+
+    <script>
+        function orderProduct(productName, price) {
+            // नीचे 91 के बाद अपना 10 अंकों का WhatsApp नंबर लिखें।
+            const phone = "91XXXXXXXXXX";
+
+            const message =
+                `नमस्ते! मुझे ${productName} ऑर्डर करना है। कीमत: ₹${price}`;
+
+            const url =
+                "https://wa.me/" + phone +
+                "?text=" + encodeURIComponent(message);
+
+            window.open(url, "_blank");
+        }
+    </script>
+
+</body>
+</html>
